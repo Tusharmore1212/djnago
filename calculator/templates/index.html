@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Homepage</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        .form-container {
+            background-color: #fff;
+            margin-left:30%;
+            border: 1px;
+            width:500px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+       input[type="text"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.calculator {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.calculator input, .calculator select, .calculator button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 1em;
+}
+.calculator button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.calculator button:hover {
+    background-color: #0056b3;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Calculator</h1>
+        </div>
+    </header>
+    <form method="POST" action="{% url 'calculate' %}">
+        {% csrf_token %}
+        <input type="number" id="value1" placeholder="Enter first value" name="n1" required>
+        <input type="number" id="value2" placeholder="Enter second value" name="n2" required>
+        <select id="operation" name='operation'>
+            <option value="add">+</option>
+            <option value="subtract">-</option>
+            <option value="multiply">*</option>
+        </select>
+        <button type="submit">Calculate</button>
+    </form>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2024 College Name. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>

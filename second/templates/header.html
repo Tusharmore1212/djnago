@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Homepage</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <style>
+        
+        .form-container {
+            background-color: #fff;
+            margin-left:30%;
+            border: 1px;
+            width:500px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+       input[type="text"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Welcome to D.Y.Patil MCA and Management Akurdi</h1>
+            <nav>
+                <ul>
+                    <li class="{% if request.path == '/' %} active {% endif %}"><a href="/">Home</a></li>
+                    <li class="{% if request.path == '/about_us' %} active {% endif %}"><a href="/about_us">About Us</a></li>
+                    <li class="{% if request.path == '/dept' %} active {% endif %}"><a href="/dept">Programs</a></li>
+                    <li class="{% if request.path == '/Admission' %} active {% endif %}"><a href="/Admission">Admissions</a></li>
+                    <li class="{% if request.path == '/contact' %} active {% endif %}"><a href="/contact">Contact</a></li>
+                    <li class="{% if request.path == '/userForm' %} active {% endif %}"><a href="/userForm">userform</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
